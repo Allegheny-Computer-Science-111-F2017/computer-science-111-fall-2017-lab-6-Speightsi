@@ -42,6 +42,8 @@ public class ManipulateDna {
     String chosenDnaString = scanner.nextLine();
     System.out.println("Your chosen DNA String is: " + chosenDnaString);
     // Step Two: Compute the complement of the DNA String
+    // I make my complement without forming a circle of replacements bt changing my lowercase variable to uppercases
+    // I need my dna in all capitals so i use the variable.toUpperCase command
     System.out.println(" \nComputing your DNA String Complement Now");
     String dnaComplement1 = chosenDnaString.replace('a', 'T');
     String dnaComplement2 = dnaComplement1.replace('t', 'A');
@@ -51,6 +53,8 @@ public class ManipulateDna {
     System.out.println(" \nThe complement of " + chosenDnaString + " is " + dnaComplement4 + ".");
     // Step Three: Insert a randomly chosen DNA letter into the DNA String
     // use substrings to isolate the code into halves
+    // choose randomly by adding a random into a char at statement,
+    // this limits the random choice to characters in my string
     System.out.println(" \nBelow is a demonstration of a mutation!");
     char dnaChar1 = 'A';
     char dnaChar2 = 'T';
@@ -62,11 +66,15 @@ public class ManipulateDna {
     System.out.println(subString1 + chosenDnaString.charAt(rng.nextInt(4)) + subString2);
     // Step Four: Delete a DNA letter from a randomly chosen position in the DNA string
     System.out.println(" \nBelow is a demonstration of a deletion!");
+    // delete by declaring my random position as a variable
+    // then display everything except that spot
     int deleteThis = rng.nextInt(chosenDnaString.length());
     String substring3 = chosenDnaString.substring(0, deleteThis);
     String substring4 = chosenDnaString.substring(deleteThis + 1);
     System.out.println(substring3 + substring4);
     // Step Five: Change a random position in the DNA String to a randomly chosen DNA letter
+    // combine the random choice from step 3 with the substring placement of step 4
+    // in order to randomly replace instead of delete
     System.out.println(" \nBelow is a demonstration of random replacement!");
     int deleteThis2 = rng.nextInt(chosenDnaString.length());
     String substring5 = chosenDnaString.substring(0, deleteThis2);
